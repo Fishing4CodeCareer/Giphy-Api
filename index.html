@@ -1,21 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Jiggle Into JavaScript</title>
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+  <meta charset="utf-8">
+  <title>Music Button giphy</title>
 </head>
+
 <body>
+  
+                                    <button data-music="DJ-K-SWIZZ">DJ K-SWIZZ</button>
+                                    <button data-music="Rozz">Rozz</button>
+        <button data-music="Fatboy-Slim">Fatboy Slim</button>
+                 <button data-music="Boris-Brejcha">Dj Boris Brejcha</button>
+                             <div id="gifs-appear-here">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                    <script type="text/javascript">
+             $("button").on("click", function() {
+            var music = $(this).attr("data-music");
 
-    <p>Press the buttons to call giphy!</p>
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        music + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
 
-    <div id="box" style="height:150px; width:150px; background-color:orange; margin:25px"></div>
+      
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+        
+        .then(function(response) {
+          console.log(queryURL);
 
-    <button id="button1">Grow</button>
-    <button id="button2">Blue</button>
-    <button id="button3">Fade</button>
-    <button id="button4">Reset</button>
+          console.log(response);
+          
+          var results = response.data;
+          
+          for (var i = 0; i < results.length; i++) {
 
-    <script type="text/javascript" src="javascript.js"></script>
+                        var musicDiv = $("<div>");
+                        var p = $("<p>").text("Rating: " + results[i].rating);
+                        var musicImage = $("<img>");
+                        musicImage.attr("src", results[i].images.fixed_height.url);
 
+            
+            musicDiv.append(p);
+            musicDiv.append(musicImage);
+
+           
+            $("#gifs-appear-here").prepend(musicDiv);
+          }
+        });
+    });
+  </script>
 </body>
+
 </html>
