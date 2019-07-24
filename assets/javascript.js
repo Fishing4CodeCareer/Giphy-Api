@@ -1,3 +1,6 @@
+
+
+
 $("button").on("click", function() {
     var music = $(this).attr("data-music");
 
@@ -29,7 +32,7 @@ method: "GET"
     musicDiv.append(musicImage);
 
    
-    $("#gifs-appear-here").prepend(musicDiv);
+    $("#gifs-appear-main").prepend(musicDiv);
   }
 });
 });

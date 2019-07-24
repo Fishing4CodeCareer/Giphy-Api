@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-  <style></style>
+  <style> 
+        </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Music Button giphy</title>
@@ -11,40 +12,17 @@
 <body>
  
 
-<nav> <iframe width="100%" height="400" src="https://www.youtube.com/embed/sGf0yrm2UDg">
-   </iframe>
-                                                   
-                    <br>
-                    <br>
-                    <br>
-                    <button data-music="DJ-K-SWIZZ">DJ K-SWIZZ</button>              
-                    
-              <div id="gifs-appear-here"></div>
+<nav><iframe width="100%" height="400" src="https://www.youtube.com/embed/sGf0yrm2UDg">
+   </iframe>                          
+   <div id="gifs-appear-main">
+                                                <button data-music="DJ-tiesto">DJ-tiesto</button><p>             
+                                                <button data-music="DJ K-SWIZZ">DJ K-SWIZZ</button></p></div>
+                                                <button data-music="Rozz">Rozz</button>                                                                                                         
+                                                <div id="gifs-appear-here">
+                                                <button data-music="Snoop-Dog">Snoop Dpg</button></div> 
+                                                <div id="gifs-appear-here">
+                                                <button data-music="Fatboy-Slim">Fatboy Slim</button> 
 
-
-              
-                  <button data-music="Rozz">Rozz</button>                                 
-                             
-                  <div id="gifs-appear-here"> </div>
-
-                    <button data-music="DJ-K-SWIZZ">DJ K-SWIZZ</button>
-                
-    
-                  <div id="gifs-appear-here">
-                          
-                <button data-music="DJ-K-SWIZZ">DJ K-SWIZZ</button>
-        
-                      <div id="gifs-appear-here" class="gifs-Design">
-                      
-                    <button data-music="Fatboy-Slim">Fatboy Slim</button>
-                        
-                  
-                          <div id="gifs-appear-here">
-            
-                                 
-                                                   
-                                                                                </div>
-  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                     <script type="text/javascript">
              $("button").on("click", function() {
@@ -78,7 +56,7 @@
             musicDiv.append(musicImage);
 
            
-            $("#gifs-appear-here").prepend(musicDiv);
+            $("#gifs-appear-main").prepend(musicDiv);
           }
         });
     });
